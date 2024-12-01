@@ -1,77 +1,43 @@
-import { Carousel, IconButton } from "@material-tailwind/react";
- 
-const Realizations = () => {
-  return (
-    <div className="w-full h-full flex items-center justify-center">
-      <Carousel
-      className="rounded-xl w-2/3 h-2/3 flex items-center justify-center"
-      prevArrow={({ handlePrev }) => (
-        <IconButton
-          variant="text"
-          color="white"
-          size="lg"
-          onClick={handlePrev}
-          className="!absolute top-2/4 left-4 -translate-y-2/4"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={2}
-            stroke="currentColor"
-            className="h-6 w-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
-            />
-          </svg>
-        </IconButton>
-      )}
-      nextArrow={({ handleNext }) => (
-        <IconButton
-          variant="text"
-          color="white"
-          size="lg"
-          onClick={handleNext}
-          className="!absolute top-2/4 !right-4 -translate-y-2/4"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={2}
-            stroke="currentColor"
-            className="h-6 w-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-            />
-          </svg>
-        </IconButton>
-      )}
-    >
-      <img
-        src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
-        alt="image 1"
-        className="h-full w-full object-cover"
-      />
-      <img
-        src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
-        alt="image 2"
-        className="h-full w-full object-cover"
-      />
-      <img
-        src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80"
-        alt="image 3"
-        className="h-full w-full object-cover"
-      />
-    </Carousel>
-    </div>
-  );
-}
+import React from 'react'
 
-export default Realizations
+import image3 from './images/image3.jpeg'
+
+export default function Realizations() {
+	return (
+		<div id="realizations" className="relative w-screen flex flex-col items-start justify-start px-4 py-2 md:px-16 mt-8 md:mt-16">
+			<h2 className="text-2xl md:text-3xl w-full font-bold uppercase text-center md:text-left">Nasze Realizacje</h2>
+			<div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-2 md:gap-2 gap-1 mt-8">
+				<div className="relative group m-2">
+					<img src={image3} className="w-full h-auto rounded-lg shadow-lg object-cover transition-all duration-300 group-hover:opacity-50" alt="Nasze realizacje" />
+					<div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-80 opacity-0 transition-opacity duration-300 group-hover:opacity-100 rounded-lg flex-col">
+						<p className="text-white font-bold text-lg">Blachodachówka: <span className='text-green-400'> RUUKI FRIGGE</span></p>
+						<p className="text-white font-bold text-lg">Powierzchnia: <span className='text-green-400'>120m2</span></p>
+					</div>
+				</div>
+				<div className="relative group m-2">
+					<img src={image3} className="w-full h-auto rounded-lg shadow-lg object-cover transition-all duration-300 group-hover:opacity-50" alt="Nasze realizacje" />
+					<div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-80 opacity-0 transition-opacity duration-300 group-hover:opacity-100 rounded-lg flex-col">
+						<p className="text-white font-bold text-lg">Blachodachówka: <span className='text-green-400'> RUUKI FRIGGE</span></p>
+						<p className="text-white font-bold text-lg">Powierzchnia: <span className='text-green-400'>120m2</span></p>
+					</div>
+				</div>
+				<div className="relative group m-2">
+					<img src={image3} className="w-full h-auto rounded-lg shadow-lg object-cover transition-all duration-300 group-hover:opacity-50" alt="Nasze realizacje" />
+					<div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-80 opacity-0 transition-opacity duration-300 group-hover:opacity-100 rounded-lg flex-col">
+						<p className="text-white font-bold text-lg">Blachodachówka: <span className='text-green-400'> RUUKI FRIGGE</span></p>
+						<p className="text-white font-bold text-lg">Powierzchnia: <span className='text-green-400'>120m2</span></p>
+					</div>
+				</div>
+				<div className="relative group m-2">
+					<img src={image3} className="w-full h-auto rounded-lg shadow-lg object-cover transition-all duration-300 group-hover:opacity-50" alt="Nasze realizacje" />
+					<div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-80 opacity-0 transition-opacity duration-300 group-hover:opacity-100 rounded-lg flex-col">
+						<p className="text-white font-bold text-lg">Blachodachówka: <span className='text-green-400'> RUUKI FRIGGE</span></p>
+						<p className="text-white font-bold text-lg">Powierzchnia: <span className='text-green-400'>120m2</span></p>
+					</div>
+				</div>
+				
+				
+			</div>
+		</div>
+	)
+}

@@ -5,16 +5,20 @@ import Navbar from './components/Navbar'
 import './App.css'
 import Home from './components/Home'
 import Header from './components/Header'
+import AboutUs from './components/AboutUs'
 import Realizations from './components/Realizations'
+import Data from './components/Data'
 const App = () => {
 	return (
-		<div className="w-full h-full">
+		<div className="w-full h-full overflow-x-hidden">
 			<BrowserRouter>
 				<Navbar />
 				<Header />
+				<AboutUs />	
+				<Data />	
 				<Realizations />	
 				<Routes>
-					<Route path="/" element={<Home />} />
+					{/* <Route path="/" element={<Home />} /> */}
 				</Routes>
 			</BrowserRouter>
 		</div>

@@ -10,8 +10,7 @@ const Header = () => {
 			<div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-60"></div>
 
 			<div className="flex items-center justify-between flex-col md:flex-row">
-				<p className="relative text-2xl mt-10 md:mt-0"></p>
-				<h1 className="relative text-4xl w-1/2 md:text-6xl xl:text-8xl font-bold">
+				<h1 className="relative w-1/2  text-5xl md:text-6xl xl:text-8xl font-bold">
 					Dachy <br /> Konstrukcje drewniane
 				</h1>
 			</div>
