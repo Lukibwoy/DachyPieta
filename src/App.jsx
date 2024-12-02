@@ -8,6 +8,7 @@ import Header from './components/Header'
 import AboutUs from './components/AboutUs'
 import Realizations from './components/Realizations'
 import Data from './components/Data'
+import Contact from './components/Contact'
 const App = () => {
 	return (
 		<div className="w-full h-full overflow-x-hidden">
@@ -17,6 +18,7 @@ const App = () => {
 				<AboutUs />	
 				<Data />	
 				<Realizations />	
+				<Contact />	
 				<Routes>
 					{/* <Route path="/" element={<Home />} /> */}
 				</Routes>

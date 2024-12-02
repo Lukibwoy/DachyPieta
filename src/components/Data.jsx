@@ -25,7 +25,7 @@ export default function Data() {
 			entries => {
 				if (entries[0].isIntersecting) {
 					animateCount(10, setExperienceCount)
-					animateCount(4000, setProjectsCount)
+					animateCount(3000, setProjectsCount)
 					animateCount(12, setWorkersCount)
 					observer.disconnect()
 				}
@@ -55,7 +55,7 @@ export default function Data() {
 
 			<div className="text-center w-full h-full my-4">
 				<p className="text-green-400 text-5xl md:text-7xl font-bold">{projectsCount}+</p>
-				<span className="font-semibold text-lg mt-4">Zrealizowanych projektów</span>
+				<span className="font-semibold text-lg mt-4">Zrealizowanych zleceń</span>
 			</div>
 
 			<div className="text-center w-full h-full my-4">
