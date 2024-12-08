@@ -11,6 +11,7 @@ import Data from './components/Data'
 import ContactForm from './components/ContactForm'
 import Separator from './components/Separator'
 import Footer from './components/Footer'
+import Contrahents from './components/Contrahents'
 const App = () => {
 	return (
 		<div className="w-full h-full overflow-x-hidden">
@@ -22,8 +23,9 @@ const App = () => {
 				<Separator />	
 				<Realizations />
 				<Separator />	
-	
+				<Contrahents />	
 				<ContactForm />	
+				<Separator />	
 				<Footer />	
 				<Routes>
 					{/* <Route path="/" element={<Home />} /> */}

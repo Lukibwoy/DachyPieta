@@ -49,18 +49,18 @@ export default function Data() {
 			ref={sectionRef}
 			className="relative w-screen flex flex-col md:flex-row items-start justify-start px-4 py-2 md:px-16 mt-8 md:mt-16">
 			<div className="text-center w-full h-full my-4">
-				<p className="text-green-400 text-5xl md:text-7xl font-bold">{experienceCount}</p>
-				<span className="font-semibold text-lg mt-4">Lat doświadczenia</span>
+				<p className="text-green-400 text-5xl md:text-7xl mb-8 font-bold">{experienceCount}</p>
+				<span className="font-semibold text-lg xxl:text-xl mt-16 uppercase">Lat doświadczenia</span>
 			</div>
 
 			<div className="text-center w-full h-full my-4">
-				<p className="text-green-400 text-5xl md:text-7xl font-bold">{projectsCount}+</p>
-				<span className="font-semibold text-lg mt-4">Zrealizowanych zleceń</span>
+				<p className="text-green-400 text-5xl md:text-7xl mb-8  font-bold">{projectsCount}+</p>
+				<span className="font-semibold text-lg xxl:text-xl mt-16 uppercase">Zrealizowanych zleceń</span>
 			</div>
 
 			<div className="text-center w-full h-full my-4">
-				<p className="text-green-400 text-5xl md:text-7xl font-bold">{workersCount}</p>
-				<span className="font-semibold text-lg mt-4">Wykwalifikowanych dekarzy</span>
+				<p className="text-green-400 text-5xl md:text-7xl mb-8  font-bold">{workersCount}</p>
+				<span className="font-semibold text-lg xxl:text-xl mt-16 uppercase">Wykwalifikowanych dekarzy</span>
 			</div>
 		</div>
 	)
