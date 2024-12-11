@@ -12,6 +12,8 @@ import ContactForm from './components/ContactForm'
 import Separator from './components/Separator'
 import Footer from './components/Footer'
 import Contrahents from './components/Contrahents'
+import Offers from './components/Offers'
+
 const App = () => {
 	return (
 		<div className="w-full h-full overflow-x-hidden">
@@ -22,6 +24,8 @@ const App = () => {
 				<Data />	
 				<Separator />	
 				<Realizations />
+				<Separator />	
+				<Offers />	
 				<Separator />	
 				<Contrahents />	
 				<ContactForm />	

@@ -14,7 +14,7 @@ const Footer = () => {
 
           <p className="mt-1">Mariusz Pięta</p>
           <p className="mt-1">Tel: +48 661 647 437</p>
-          <p className="mt-1">Email: email@gmial.com</p>
+          <p className="mt-1">Email: mar.pieta@wp.pl</p>
         </div>
 
         {/* Sekcja po prawej */}
@@ -25,7 +25,7 @@ const Footer = () => {
         </div>
       </div>
       <section className="mx-auto">
-        <p className="text-center mt-8 text-[0.7rem] font-[500]">Designed by: Łukasz Wilczyński</p>
+        <p className="text-center mt-8 text-[0.7rem] font-[500]">Created by: Łukasz Wilczyński</p>
       </section>
     </div>
   )

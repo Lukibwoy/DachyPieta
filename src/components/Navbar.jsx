@@ -3,6 +3,8 @@ import { Link as ScrollLink } from 'react-scroll'
 import { Link as RouterLink } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import Logo from './Logo'
+import { FaPhone } from 'react-icons/fa'
+import { IoIosMail } from 'react-icons/io'
 
 const Navbar = () => {
 	const [isMobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -21,29 +23,40 @@ const Navbar = () => {
 			<div className="hidden md:flex items-center justify-between">
 				<Logo />
 
-				<div className="md:space-x-5 lg:space-x-20 xxl:space-x-40 text-2xl mr-20 font-semibold">
-	<RouterLink to="/" className="nav-link text-green-400 cursor-pointer">
-		Start
-	</RouterLink>
-	<ScrollLink to="aboutus" smooth={true} duration={500} className="nav-link text-black cursor-pointer">
-		O nas
-	</ScrollLink>
-	<ScrollLink to="realizations" smooth={true} duration={500} className="nav-link text-black cursor-pointer">
-		Realizacje
-	</ScrollLink>
-	<ScrollLink to="offer" smooth={true} duration={500} className="nav-link text-black cursor-pointer">
-		Oferta
-	</ScrollLink>
-	<ScrollLink to="contact" smooth={true} duration={500} className="nav-link text-black cursor-pointer">
-		Kontakt
-	</ScrollLink>
-</div>
+				<div className="flex flex-col items-center justify-between space-y-2">
+					<span className="text-lg font-semibold text-black flex items-center">
+						<IoIosMail className="mr-2 text-green-400 text-2xl" />
+						mar.pieta@wp.pl
+					</span>
+					<span className="text-lg font-semibold text-black flex items-center ">
+						<FaPhone className="mr-2 text-green-400" />
+						+48 661 647 437
+					</span>
+				</div>
 
+				<div className="md:space-x-5 lg:space-x-20 xxl:space-x-40 text-2xl mr-20 font-semibold">
+					<RouterLink to="/" className="nav-link text-green-400 cursor-pointer">
+						Start
+					</RouterLink>
+					<ScrollLink to="aboutus" smooth={true} duration={500} className="nav-link text-black cursor-pointer">
+						O nas
+					</ScrollLink>
+					<ScrollLink to="realizations" smooth={true} duration={500} className="nav-link text-black cursor-pointer">
+						Realizacje
+					</ScrollLink>
+					<ScrollLink to="offers" smooth={true} duration={500} className="nav-link text-black cursor-pointer">
+						Oferta
+					</ScrollLink>
+					<ScrollLink to="contact" smooth={true} duration={500} className="nav-link text-black cursor-pointer">
+						Kontakt
+					</ScrollLink>
+				</div>
 			</div>
 
 			{/* Mobile Navigation */}
 			<div className="md:hidden flex items-center justify-between">
-				<Logo />
+				<Logo className="w-2/3" />
+
 				<motion.button
 					className=" p-2 focus:outline-none text-3xl text-green-400"
 					onClick={toggleMobileMenu}
@@ -58,61 +71,61 @@ const Navbar = () => {
 			<AnimatePresence>
 				{isMobileMenuOpen && (
 					<motion.div
-					key="mobileMenu"
-					initial={{ opacity: 0, x: '-100%' }}
-					animate={{ opacity: 1, x: 0 }}
-					exit={{ opacity: 0, x: '-100%' }}
-					transition={{ duration: 0.3, ease: 'easeInOut' }}
-					className="md:hidden ml-5 absolute top-0 right-0 bg-gray-300 bg-opacity-10 backdrop-blur-md w-full z-10">
-					<div className="flex items-center justify-between p-8">
-						<motion.button
-							className="text-black focus:outline-none text-3xl relative left-full top-8"
-							onClick={closeMobileMenu}
-							initial={{ opacity: 0 }}
-							animate={{ opacity: 1 }}
-							exit={{ opacity: 0 }}	
-							transition={{ duration: 0.3, ease: 'easeInOut' }}>
-							✕
-						</motion.button>
-					</div>
-					<div className="space-y-16 font-semibold h-full flex flex-col items-center text-lg pb-36">
-						<RouterLink to="/" className="block text-green-400 cursor-pointer" onClick={closeMobileMenu}>
-							START
-						</RouterLink>
-						<ScrollLink
-							to="aboutus"
-							smooth={true}
-							duration={500}
-							className="block text-white cursor-pointer"
-							onClick={closeMobileMenu}>
-							O NAS
-						</ScrollLink>
-						<ScrollLink
-							to="realizations"
-							smooth={true}
-							duration={500}
-							className="block text-white cursor-pointer"
-							onClick={closeMobileMenu}>
-							REALIZACJE
-						</ScrollLink>
-						<ScrollLink
-							to="offer"
-							smooth={true}
-							duration={500}
-							className="block text-white cursor-pointer"
-							onClick={closeMobileMenu}>
-							OFERTA
-						</ScrollLink>
-						<ScrollLink
-							to="contact"
-							smooth={true}
-							duration={500}
-							className="block text-white cursor-pointer"
-							onClick={closeMobileMenu}>
-							KONTAKT
-						</ScrollLink>
-					</div>
-				</motion.div>
+						key="mobileMenu"
+						initial={{ opacity: 0, x: '-100%' }}
+						animate={{ opacity: 1, x: 0 }}
+						exit={{ opacity: 0, x: '-100%' }}
+						transition={{ duration: 0.3, ease: 'easeInOut' }}
+						className="md:hidden ml-5 absolute top-0 right-0 bg-gray-300 bg-opacity-10 backdrop-blur-md w-full z-10">
+						<div className="flex items-center justify-between p-8">
+							<motion.button
+								className="text-black focus:outline-none text-3xl relative left-full top-8"
+								onClick={closeMobileMenu}
+								initial={{ opacity: 0 }}
+								animate={{ opacity: 1 }}
+								exit={{ opacity: 0 }}
+								transition={{ duration: 0.3, ease: 'easeInOut' }}>
+								✕
+							</motion.button>
+						</div>
+						<div className="space-y-16 font-semibold h-full flex flex-col items-center text-lg pb-36">
+							<RouterLink to="/" className="block text-green-400 cursor-pointer" onClick={closeMobileMenu}>
+								START
+							</RouterLink>
+							<ScrollLink
+								to="aboutus"
+								smooth={true}
+								duration={500}
+								className="block text-white cursor-pointer"
+								onClick={closeMobileMenu}>
+								O NAS
+							</ScrollLink>
+							<ScrollLink
+								to="realizations"
+								smooth={true}
+								duration={500}
+								className="block text-white cursor-pointer"
+								onClick={closeMobileMenu}>
+								REALIZACJE
+							</ScrollLink>
+							<ScrollLink
+								to="offer"
+								smooth={true}
+								duration={500}
+								className="block text-white cursor-pointer"
+								onClick={closeMobileMenu}>
+								OFERTA
+							</ScrollLink>
+							<ScrollLink
+								to="contact"
+								smooth={true}
+								duration={500}
+								className="block text-white cursor-pointer"
+								onClick={closeMobileMenu}>
+								KONTAKT
+							</ScrollLink>
+						</div>
+					</motion.div>
 				)}
 			</AnimatePresence>
 		</nav>

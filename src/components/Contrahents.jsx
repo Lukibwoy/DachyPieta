@@ -17,8 +17,8 @@ const companyLogos = [
 export default function Contrahents() {
 	return (
 		<div className="mt-8 py-8">
-			<h3 className="text-center text-3xl font-semibold text-black uppercase">
-				Współpracujemy z najlepszymi producentami:
+			<h3 className="text-center text-3xl font-semibold text-black uppercase ">
+				Współpracujemy z:
 			</h3>
 			<div className="relative overflow-hidden mt-6">
 				<div className="flex md:animate-scroll animate-scroll-mobile gap-8 whitespace-nowrap">

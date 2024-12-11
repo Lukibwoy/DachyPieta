@@ -13,6 +13,8 @@ module.exports = {
 			animation: {
 				scroll: 'scroll 10s linear infinite',
 				'scroll-mobile': 'scroll 3s linear infinite',
+				'spin-slow': 'spin 3s linear infinite',
+				'spin-fast': 'spin 0.5s linear infinite',
 			},
 			keyframes: {
 				scroll: {
