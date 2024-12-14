@@ -28,8 +28,8 @@ const App = () => {
 				<Offers />	
 				<Separator />	
 				<Contrahents />	
-				<ContactForm />	
 				<Separator />	
+				<ContactForm />	
 				<Footer />	
 				<Routes>
 					{/* <Route path="/" element={<Home />} /> */}

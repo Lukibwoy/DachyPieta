@@ -120,10 +120,21 @@ const Navbar = () => {
 								to="contact"
 								smooth={true}
 								duration={500}
-								className="block text-white cursor-pointer"
+								className="block text-white cursor-pointer mb-8"
 								onClick={closeMobileMenu}>
 								KONTAKT
 							</ScrollLink>
+							<div className="flex flex-col items-center justify-between space-y-4">
+					<span className="text-lg font-semibold text-white flex items-center">
+						<IoIosMail className="mr-2 text-green-400 text-2xl" />
+						mar.pieta@wp.pl
+					</span>
+					<span className="text-lg font-semibold text-white flex items-center ">
+						<FaPhone className="mr-2 text-green-400" />
+						+48 661 647 437
+					</span>
+				</div>
+							
 						</div>
 					</motion.div>
 				)}

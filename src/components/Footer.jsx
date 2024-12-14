@@ -2,7 +2,7 @@ import Logo from './Logo'
 
 const Footer = () => {
   return (
-    <div id="contact" className="relative text-white font-quicksand px-4 bg-green-900 border-t-[1px] mt-5">
+    <div id="contact" className="relative text-white font-quicksand px-4 bg-green-900 border-t-[1px] -mt-40 md:mt-24">
       {/* Logo w górnej części stopki */}
 	  <div className="absolute -top-20 left-1/2 transform -translate-x-1/2  p-4 rounded-full hover:scale-110 transition-transform duration-300">	  <Logo />
       </div>
