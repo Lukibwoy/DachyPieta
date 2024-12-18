@@ -2,7 +2,7 @@ import React from 'react';
 import image15 from './images/image15.jpeg';
 import image3 from './images/image3.jpeg';
 
-export default function USŁUGI() {
+export default function Offers() {
 	return (
 		<div
 			id="offers"

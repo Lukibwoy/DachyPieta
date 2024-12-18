@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { Link as ScrollLink } from 'react-scroll'
 import { Link as RouterLink } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import Logo from './Logo'
@@ -17,6 +16,14 @@ const Navbar = () => {
 		setMobileMenuOpen(false)
 	}
 
+	const scrollToSection = id => {
+		const element = document.getElementById(id)
+		if (element) {
+			element.scrollIntoView({ behavior: 'smooth' })
+			closeMobileMenu()
+		}
+	}
+
 	return (
 		<nav id="/" className="md:p-0 p-2 relative z-10">
 			{/* Desktop Navigation */}
@@ -28,28 +35,28 @@ const Navbar = () => {
 						<IoIosMail className="mr-2 text-green-400 text-2xl" />
 						mar.pieta@wp.pl
 					</span>
-					<span className="text-lg font-semibold text-black flex items-center ">
+					<span className="text-lg font-semibold text-black flex items-center">
 						<FaPhone className="mr-2 text-green-400" />
 						+48 661 647 437
 					</span>
 				</div>
 
 				<div className="md:space-x-5 lg:space-x-20 xxl:space-x-40 text-2xl mr-20 font-semibold">
-					<RouterLink to="/" className="nav-link text-green-400 cursor-pointer">
+					<button to="/" className="nav-link text-green-400 cursor-pointer">
 						Start
-					</RouterLink>
-					<ScrollLink to="aboutus" smooth={true} duration={500} className="nav-link text-black cursor-pointer">
+					</button>
+					<button onClick={() => scrollToSection('aboutus')} className="nav-link text-black cursor-pointer">
 						O nas
-					</ScrollLink>
-					<ScrollLink to="realizations" smooth={true} duration={500} className="nav-link text-black cursor-pointer">
+					</button>
+					<button onClick={() => scrollToSection('realizations')} className="nav-link text-black cursor-pointer">
 						Realizacje
-					</ScrollLink>
-					<ScrollLink to="offers" smooth={true} duration={500} className="nav-link text-black cursor-pointer">
+					</button>
+					<button onClick={() => scrollToSection('offers')} className="nav-link text-black cursor-pointer">
 						Oferta
-					</ScrollLink>
-					<ScrollLink to="contact" smooth={true} duration={500} className="nav-link text-black cursor-pointer">
+					</button>
+					<button onClick={() => scrollToSection('contact')} className="nav-link text-black cursor-pointer">
 						Kontakt
-					</ScrollLink>
+					</button>
 				</div>
 			</div>
 
@@ -58,7 +65,7 @@ const Navbar = () => {
 				<Logo className="w-2/3" />
 
 				<motion.button
-					className=" p-2 focus:outline-none text-3xl text-green-400"
+					className="p-2 focus:outline-none text-3xl text-green-400"
 					onClick={toggleMobileMenu}
 					initial={false}
 					animate={{ rotate: isMobileMenuOpen ? 45 : 0 }}
@@ -76,7 +83,7 @@ const Navbar = () => {
 						animate={{ opacity: 1, x: 0 }}
 						exit={{ opacity: 0, x: '-100%' }}
 						transition={{ duration: 0.3, ease: 'easeInOut' }}
-						className="md:hidden ml-5 absolute top-0 right-0 bg-gray-300 bg-opacity-10 backdrop-blur-md w-full z-10">
+						className="md:hidden ml-5 absolute top-0 right-0 bg-gray-300 bg-opacity-10 h-screen backdrop-blur-md w-full z-10">
 						<div className="flex items-center justify-between p-8">
 							<motion.button
 								className="text-black focus:outline-none text-3xl relative left-full top-8"
@@ -92,49 +99,28 @@ const Navbar = () => {
 							<RouterLink to="/" className="block text-green-400 cursor-pointer" onClick={closeMobileMenu}>
 								START
 							</RouterLink>
-							<ScrollLink
-								to="aboutus"
-								smooth={true}
-								duration={500}
-								className="block text-white cursor-pointer"
-								onClick={closeMobileMenu}>
+							<button onClick={() => scrollToSection('aboutus')} className="block text-white cursor-pointer">
 								O NAS
-							</ScrollLink>
-							<ScrollLink
-								to="realizations"
-								smooth={true}
-								duration={500}
-								className="block text-white cursor-pointer"
-								onClick={closeMobileMenu}>
+							</button>
+							<button onClick={() => scrollToSection('realizations')} className="block text-white cursor-pointer">
 								REALIZACJE
-							</ScrollLink>
-							<ScrollLink
-								to="offer"
-								smooth={true}
-								duration={500}
-								className="block text-white cursor-pointer"
-								onClick={closeMobileMenu}>
+							</button>
+							<button onClick={() => scrollToSection('offers')} className="block text-white cursor-pointer">
 								OFERTA
-							</ScrollLink>
-							<ScrollLink
-								to="contact"
-								smooth={true}
-								duration={500}
-								className="block text-white cursor-pointer mb-8"
-								onClick={closeMobileMenu}>
+							</button>
+							<button onClick={() => scrollToSection('contact')} className="block text-white cursor-pointer mb-8">
 								KONTAKT
-							</ScrollLink>
+							</button>
 							<div className="flex flex-col items-center justify-between space-y-4">
-					<span className="text-lg font-semibold text-white flex items-center">
-						<IoIosMail className="mr-2 text-green-400 text-2xl" />
-						mar.pieta@wp.pl
-					</span>
-					<span className="text-lg font-semibold text-white flex items-center ">
-						<FaPhone className="mr-2 text-green-400" />
-						+48 661 647 437
-					</span>
-				</div>
-							
+								<span className="text-lg font-semibold text-white flex items-center">
+									<IoIosMail className="mr-2 text-green-400 text-2xl" />
+									mar.pieta@wp.pl
+								</span>
+								<span className="text-lg font-semibold text-white flex items-center">
+									<FaPhone className="mr-2 text-green-400" />
+									+48 661 647 437
+								</span>
+							</div>
 						</div>
 					</motion.div>
 				)}

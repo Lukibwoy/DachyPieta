@@ -20,20 +20,18 @@ const App = () => {
 			<BrowserRouter>
 				<Navbar />
 				<Header />
-				<AboutUs />	
-				<Data />	
-				<Separator />	
+				<AboutUs />
+				<Data />
+				<Separator />
 				<Realizations />
-				<Separator />	
-				<Offers />	
-				<Separator />	
-				<Contrahents />	
-				<Separator />	
-				<ContactForm />	
-				<Footer />	
-				<Routes>
-					{/* <Route path="/" element={<Home />} /> */}
-				</Routes>
+				<Separator />
+				<Offers />
+				<Separator />
+				<Contrahents />
+				<Separator />
+				<ContactForm />
+				<Footer />
+				<Routes>{/* <Route path="/" element={<Home />} /> */}</Routes>
 			</BrowserRouter>
 		</div>
 	)
