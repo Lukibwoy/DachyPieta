@@ -25,3 +25,7 @@
 .mobile-active img {
 	opacity: 0.5;
 }
+
+html {
+    height: 100vh; 
+}

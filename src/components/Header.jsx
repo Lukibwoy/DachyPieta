@@ -20,20 +20,21 @@ const Header = () => {
 	})
 
 	return (
-		<header className="relative w-full h-4/5 md:h-3/4 xxl:h-4/5 z-0 flex items-center justify-center text-white">
+		<header className="relative w-full h-[70vh] md:h-[80vh] flex items-center justify-center text-white">
 			<img src={dach1} alt="Roof image" className="absolute top-0 left-0 w-full h-full object-cover" />
 
 			<div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-60"></div>
 
 			<div className="relative flex flex-col md:flex-row items-center justify-around w-full px-8 md:px-16">
-				<h1 className="text-5xl md:text-6xl w-1/2 h-full xl:text-8xl font-bold text-center md:text-left">Usługi
-					<br /> 
+				<h1 className="text-5xl md:text-6xl w-1/2 h-full xl:text-8xl font-bold text-center md:text-left">
+					Usługi
+					<br />
 					<span>{typeEffect}</span>
 					<br />
 				</h1>
 
 				{/* Przycisk z podpisem przesunięty w dół */}
-				<div className="transform md:translate-y-32 flex flex-col items-center">
+				<div className="transform md:translate-y-32 translate-y-16 flex flex-col items-center">
 					<button
 						onClick={scrollToAboutUs}
 						className="w-24 h-24 md:w-36 md:h-36 flex items-center justify-center  text-white font-bold text-xl md:text-6xl rounded-full  

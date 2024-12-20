@@ -16,7 +16,7 @@ import Offers from './components/Offers'
 
 const App = () => {
 	return (
-		<div className="w-full h-full overflow-x-hidden">
+		<div className="main-container w-full h-full overflow-x-hidden ">
 			<BrowserRouter>
 				<Navbar />
 				<Header />
