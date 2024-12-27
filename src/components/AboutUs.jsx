@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
-import image2 from './images/image2.jpeg'
+import dzwig from './images/dzwig.jpg'
 
 export default function AboutUs() {
 	return (
@@ -27,8 +27,8 @@ export default function AboutUs() {
 				viewport={{ once: true }}
 				className="mt-6 md:mt-0 w-full md:w-1/2 flex justify-center items-center z-10">
 				<img
-					src={image2}
-					className="w-full h-auto rounded-lg shadow-lg object-cover md:h-full"
+					src={dzwig}
+					className="w-full h-auto rounded-lg shadow-lg object-cover md:h-full transition-transform duration-300 hover:scale-105"
 					alt="Nasze realizacje"
 				/>
 			</motion.div>

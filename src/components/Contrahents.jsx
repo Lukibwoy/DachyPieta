@@ -9,6 +9,8 @@ import pruszek from './images/pruszek.png'
 import dachsystem from './images/dachsystem2.png'
 import roben from './images/roben.png'
 import budmat from './images/budmat.png'
+import velux from './images/velux.png'
+import fakro from './images/fakro.png'
 
 const companyLogos = [
 	{ src: ruukki, alt: 'Ruukki', scale: 1 },
@@ -16,6 +18,8 @@ const companyLogos = [
 	{ src: dachsystem, alt: 'Dachsystem', scale: 0.5 },
 	{ src: roben, alt: 'Roben', scale: 1 },
 	{ src: budmat, alt: 'Budmat', scale: 1 },
+	{ src: velux, alt: 'Velux', scale: .6 },
+	{ src: fakro, alt: 'Fakro', scale: 1 },
 ]
 
 export default function Contrahents() {

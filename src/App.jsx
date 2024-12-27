@@ -13,6 +13,7 @@ import Separator from './components/Separator'
 import Footer from './components/Footer'
 import Contrahents from './components/Contrahents'
 import Offers from './components/Offers'
+import Process from './components/Process'
 
 const App = () => {
 	return (
@@ -26,6 +27,7 @@ const App = () => {
 				<Realizations />
 				<Separator />
 				<Offers />
+				<Process />
 				<Separator />
 				<Contrahents />
 				<Separator />

@@ -8,7 +8,7 @@ export default function Data() {
 
 	const animateCount = (target, setCount) => {
 		let count = 0
-		const step = target / 64
+		const step = target / 43
 		const interval = setInterval(() => {
 			count += step
 			if (count >= target) {
@@ -24,9 +24,9 @@ export default function Data() {
 		const observer = new IntersectionObserver(
 			entries => {
 				if (entries[0].isIntersecting) {
-					animateCount(15, setExperienceCount)
-					animateCount(3000, setProjectsCount)
-					animateCount(12, setWorkersCount)
+					animateCount(30, setExperienceCount)
+					animateCount(1600, setProjectsCount)
+					animateCount(8, setWorkersCount)
 					observer.disconnect()
 				}
 			},

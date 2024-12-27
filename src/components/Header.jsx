@@ -33,8 +33,7 @@ const Header = () => {
 					<br />
 				</h1>
 
-				{/* Przycisk z podpisem przesunięty w dół */}
-				<div className="transform md:translate-y-32 translate-y-16 flex flex-col items-center">
+				<div className="transform md:translate-y-24 translate-y-16 xxl:translate-y-48 flex flex-col items-center">
 					<button
 						onClick={scrollToAboutUs}
 						className="w-24 h-24 md:w-36 md:h-36 flex items-center justify-center  text-white font-bold text-xl md:text-6xl rounded-full  
