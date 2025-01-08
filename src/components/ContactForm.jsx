@@ -18,26 +18,42 @@ export default function ContactForm() {
 			.required('Pole jest wymagane'),
 		email: Yup.string().email('Nieprawidłowy format email').required('Pole jest wymagane'),
 		message: Yup.string().max(1000, 'Treść może mieć maksymalnie 1000 znaków').required('Pole jest wymagane'),
-		file: Yup.mixed().nullable()
-    .test(
-        'fileSize',
-        'Plik jest za duży (maks. 5MB)',
-        value => !value || value.size <= 5242880 
-    )
-    .test(
-        'fileType',
-        'Nieprawidłowy format pliku (akceptowane: .jpg, .png, .pdf)',
-        value => !value || ['image/jpeg', 'image/png', 'application/pdf'].includes(value.type)
-    ),
-
+		file: Yup.mixed()
+			.nullable()
+			.test('fileSize', 'Plik jest za duży (maks. 5MB)', value => !value || value.size <= 5242880)
+			.test(
+				'fileType',
+				'Nieprawidłowy format pliku (akceptowane: .jpg, .png, .pdf)',
+				value => !value || ['image/jpeg', 'image/png', 'application/pdf'].includes(value.type)
+			),
 	})
 
-	const handleSubmit = (values, { resetForm }) => {
-		console.log('Wysłano:', values)
-		alert(`Wysłano wiadomość od ${values.name}. Załącznik: ${values.file?.name || 'Brak'}`)
-		resetForm()
-	}
+	const handleSubmit = async (values, { resetForm }) => {
+		const formData = new FormData()
+		formData.append('name', values.name)
+		formData.append('email', values.email)
+		formData.append('message', values.message)
+		if (values.file) {
+			formData.append('file', values.file)
+		}
 
+		try {
+			const response = await fetch('http://localhost:5000/send', {
+				method: 'POST',
+				body: formData,
+			})
+
+			if (response.ok) {
+				alert(`Wysłano wiadomość od ${values.name}. Załącznik: ${values.file?.name || 'Brak'}`)
+				resetForm()
+			} else {
+				alert('Wystąpił błąd podczas wysyłania wiadomości')
+			}
+		} catch (error) {
+			console.error('Error:', error)
+			alert('Wystąpił błąd podczas wysyłania wiadomości')
+		}
+	}
 	return (
 		<div className="relative w-screen h-auto flex flex-col items-start justify-start px-4 py-2 md:px-16 mt-8 md:mt-32	 md:flex-row mb-64 md:mb-0">
 			<div className="left-side w-full md:w-1/2 h-3/4">
@@ -91,21 +107,21 @@ export default function ContactForm() {
 							</div>
 
 							<div>
-    <label htmlFor="file" className="block text-sm font-medium text-gray-700 mt-4">
-       * Załącz projekt dachu - obsługiwane formaty: PNG, JPG oraz JPEG.
-    </label>
-    <input
-        type="file"
-        id="file"
-        name="file"
-        className="mt-1 block w-full border hover:border-green-400 rounded-md shadow-sm p-2"
-        onChange={event => {
-            setFieldValue('file', event.target.files[0])
-        }}
-    />
-    <ErrorMessage name="file" component="div" className="text-red-500 text-sm mt-1" />
-</div>
-
+								<label htmlFor="file" className="block text-sm font-medium text-gray-700 mt-4">
+									<span className="font-semibold">* (opcjonalnie)</span> Załącz projekt dachu - obsługiwane formaty:
+									PNG, JPG oraz JPEG.
+								</label>
+								<input
+									type="file"
+									id="file"
+									name="file"
+									className="mt-2 block w-full border hover:border-green-400 rounded-md shadow-sm p-2"
+									onChange={event => {
+										setFieldValue('file', event.target.files[0])
+									}}
+								/>
+								<ErrorMessage name="file" component="div" className="text-red-500 text-sm mt-1" />
+							</div>
 
 							<button
 								type="submit"
