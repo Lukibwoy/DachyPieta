@@ -35,7 +35,7 @@ app.post('/send', upload.single('file'), async (req, res) => {
 	}
 
 	const mailOptions = {
-		from: email,
+		from: 'kontakt@gmail.com',
 		to: 'dachypieta@gmail.com',
 		subject: `Nowa wiadomość od ${name}`,
 		text: `Otrzymałeś nową wiadomość od użytkownika ${name} (${email}):\n\n${message}`,

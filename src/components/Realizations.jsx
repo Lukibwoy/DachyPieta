@@ -7,6 +7,7 @@ import image11 from './images/image11.jpg'
 import image12 from './images/image12.jpg'
 import image13 from './images/image13.jpg'
 import image33 from './images/image33.jpeg'
+import imagesplit from './images/image_split.png'
 
 const realizationsData = [
 	{ image: image11, type: 'Blachodachówka', model: 'RUUKI MONTERREY GRAND', area: '250m2' },
@@ -15,7 +16,8 @@ const realizationsData = [
 	{ image: image10, type: 'Blachodachówka', model: 'RUUKI MONTERREY GRAND', area: '190m2' },
 	{ image: image12, type: 'Blachodachówka', model: 'RUUKI CLASSIC DESIGN M', area: '216m2' },
 	{ image: image13, type: 'Dachówka betonowa', model: 'BRAAS TEVIVA', area: '150m2' },
-	{ image: image33, type: 'Dachówka betonowa', model: 'BRAAS TEVIVA', area: '150m2' },
+	{ image: image33, type: 'Blacha obróbkowa', model: '-', area: '-' },
+	{ image: imagesplit, type: 'Blacha obróbkowa', model: '-', area: '-' },
 ]
 
 export default function Realizations() {

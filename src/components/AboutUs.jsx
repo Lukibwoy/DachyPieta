@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
-import dzwig from './images/dzwig.jpg'
+import dzwig from './images/dzwig.jpg'	
 
 export default function AboutUs() {
 	return (
