@@ -9,27 +9,23 @@ const fs = require('fs')
 const app = express()
 const PORT = 5000
 
-// Middleware
 app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
-// Storage for uploaded files
 const upload = multer({ dest: 'uploads/' })
 
-// Nodemailer transporter configuration
 const transporter = nodemailer.createTransport({
 	service: 'gmail',
 	auth: {
-		user: 'dachypieta@gmail.com', // Replace with your Gmail address
-		pass: 'mqth aquc ccvs skod', // Replace with your Gmail password or app-specific password
+		user: 'dachypieta@gmail.com',
+		pass: 'mqth aquc ccvs skod',
 	},
 	tls: {
 		rejectUnauthorized: false,
 	},
 })
 
-// Endpoint to handle form submission
 app.post('/send', upload.single('file'), async (req, res) => {
 	const { name, email, message } = req.body
 	const file = req.file
@@ -38,10 +34,9 @@ app.post('/send', upload.single('file'), async (req, res) => {
 		return res.status(400).send('All fields are required')
 	}
 
-	// Mail options
 	const mailOptions = {
 		from: email,
-		to: 'xxx@gmail.com', // Replace with your receiving email
+		to: 'dachypieta@gmail.com',
 		subject: `Nowa wiadomość od ${name}`,
 		text: `Otrzymałeś nową wiadomość od użytkownika ${name} (${email}):\n\n${message}`,
 		attachments: file
@@ -57,7 +52,6 @@ app.post('/send', upload.single('file'), async (req, res) => {
 	try {
 		await transporter.sendMail(mailOptions)
 
-		// Remove the uploaded file after sending the email
 		if (file) {
 			fs.unlinkSync(file.path)
 		}
@@ -69,7 +63,6 @@ app.post('/send', upload.single('file'), async (req, res) => {
 	}
 })
 
-// Start the server
 app.listen(PORT, () => {
 	console.log(`Server is running on http://localhost:${PORT}`)
 })
