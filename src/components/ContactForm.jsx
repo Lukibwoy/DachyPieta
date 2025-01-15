@@ -38,7 +38,7 @@ export default function ContactForm() {
 		}
 
 		try {
-			const response = await fetch('http://localhost:5000/send', {
+			const response = await fetch('https://dachyserver-3.onrender.com/send', {
 				method: 'POST',
 				body: formData,
 			})
