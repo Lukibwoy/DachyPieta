@@ -12,7 +12,7 @@ const Footer = () => {
 			<div className="grid grid-cols-1 sm:grid-cols-2 mx-auto mt-16 sm:max-w-[950px] gap-8 sm:gap-16 px-4">
 				{/* Sekcja po lewej */}
 				<div className="text-left">
-					<p className="font-semibold">Kontakt</p>
+					<p className="font-semibold">Kontakt:</p>
 
 					<p className="mt-1">Mariusz Pięta</p>
 					<p className="mt-1">Tel: +48 661 647 437</p>

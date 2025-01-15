@@ -7,6 +7,8 @@ import image11 from './images/image11.jpg'
 import image12 from './images/image12.jpg'
 import image13 from './images/image13.jpg'
 import image33 from './images/image33.jpeg'
+import wiezba1 from './images/wiezba1.jpeg'
+import wiezba2 from './images/wiezba2.jpeg'
 import imagesplit from './images/image_split.png'
 
 const realizationsData = [
@@ -18,6 +20,8 @@ const realizationsData = [
 	{ image: image13, type: 'Dachówka betonowa', model: 'BRAAS TEVIVA', area: '150m2' },
 	{ image: image33, type: 'Blacha obróbkowa', model: '-', area: '-' },
 	{ image: imagesplit, type: 'Blacha obróbkowa', model: '-', area: '-' },
+	{ image: wiezba1, type: '-', model: '-', area: '-' },
+	{ image: wiezba2, type: '-', model: '-', area: '-' },
 ]
 
 export default function Realizations() {
@@ -41,15 +45,23 @@ export default function Realizations() {
 							alt={`Nasze realizacje ${index + 1}`}
 						/>
 						<div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-70 opacity-0 transition-opacity duration-300 group-hover:opacity-100 rounded-lg flex-col">
-							<p className="text-white font-bold text-sm md:text-lg">
-								Rodzaj pokrycia: <span className="text-green-400">{item.type}</span>
-							</p>
-							<p className="text-white font-bold text-sm md:text-lg">
-								Model: <span className="text-green-400">{item.model}</span>
-							</p>
-							<p className="text-white font-bold text-sm md:text-lg">
-								Powierzchnia dachu: <span className="text-green-400">{item.area}</span>
-							</p>
+							{item.type !== '-' && (
+								<p className="text-white font-bold text-sm md:text-lg">
+									Rodzaj pokrycia: <span className="text-green-400">{item.type}</span>
+								</p>
+							)}
+
+							{item.model !== '-' && (
+								<p className="text-white font-bold text-sm md:text-lg">
+									Model: <span className="text-green-400">{item.model}</span>
+								</p>
+							)}
+
+							{item.area !== '-' && (
+								<p className="text-white font-bold text-sm md:text-lg">
+									Powierzchnia dachu: <span className="text-green-400">{item.area}</span>
+								</p>
+							)}
 						</div>
 					</div>
 				))}
