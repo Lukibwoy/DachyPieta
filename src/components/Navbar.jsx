@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
-import { Link as RouterLink } from 'react-router-dom'
+import { Link as RouterLink, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import Logo from './Logo'
 import { FaPhone } from 'react-icons/fa'
 import { IoIosMail } from 'react-icons/io'
-import { Link } from 'react-scroll' // Import react-scroll
+import { Link } from 'react-scroll'
 
 const Navbar = () => {
 	const [isMobileMenuOpen, setMobileMenuOpen] = useState(false)
+	const navigate = useNavigate()
 
 	const toggleMobileMenu = () => {
 		setMobileMenuOpen(!isMobileMenuOpen)
@@ -15,6 +16,17 @@ const Navbar = () => {
 
 	const closeMobileMenu = () => {
 		setMobileMenuOpen(false)
+	}
+
+	// Navigate to home and scroll
+	const handleNavigateHome = (target) => {
+		navigate('/') // Redirect to home page
+		setTimeout(() => {
+			// Scroll to target section
+			const element = document.getElementById(target)
+			if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+		}, 100) // Timeout ensures page loads before scrolling
+		closeMobileMenu() // Close mobile menu after navigation
 	}
 
 	return (
@@ -34,22 +46,26 @@ const Navbar = () => {
 					</span>
 				</div>
 
-				<div className="md:space-x-5 lg:space-x-20 xxl:space-x-40 text-2xl mr-20 font-semibold">
-					<Link to="start" smooth={true} duration={500} className="nav-link text-green-400 cursor-pointer">
+				<div className="md:space-x-5 lg:space-x-14 xxl:space-x-40 text-2xl mr-20 font-semibold">
+					<span onClick={() => handleNavigateHome('start')} className="nav-link text-green-400 cursor-pointer">
 						Start
-					</Link>
-					<Link to="aboutus" smooth={true} duration={500} className="nav-link text-black cursor-pointer">
+					</span>
+					<span onClick={() => handleNavigateHome('aboutus')} className="nav-link text-black cursor-pointer">
 						O nas
-					</Link>
-					<Link to="realizations" smooth={true} duration={500} className="nav-link text-black cursor-pointer">
+					</span>
+					<span onClick={() => handleNavigateHome('realizations')} className="nav-link text-black cursor-pointer">
 						Realizacje
-					</Link>
-					<Link to="offers" smooth={true} duration={500} className="nav-link text-black cursor-pointer">
+					</span>
+					<span onClick={() => handleNavigateHome('offers')} className="nav-link text-black cursor-pointer">
 						Oferta
-					</Link>
-					<Link to="contact" smooth={true} duration={500} className="nav-link text-black cursor-pointer">
+					</span>
+				
+					<span onClick={() => handleNavigateHome('contact')} className="nav-link text-black cursor-pointer">
 						Kontakt
-					</Link>
+					</span>
+					<RouterLink to="/joboffers" className="nav-link text-green-400 cursor-pointer">
+						Oferty Pracy
+					</RouterLink>
 				</div>
 			</div>
 
@@ -76,7 +92,7 @@ const Navbar = () => {
 						animate={{ opacity: 1, x: 0 }}
 						exit={{ opacity: 0, x: '-100%' }}
 						transition={{ duration: 0.3, ease: 'easeInOut' }}
-						className="md:hidden ml-5 absolute top-0 right-0 bg-gray-300 bg-opacity-10 h-screen backdrop-blur-md w-full z-10">
+						className="md:hidden ml-5 absolute top-0 right-0 bg-gray-900 bg-opacity-50 h-screen backdrop-blur-md w-full z-10">
 						<div className="flex items-center justify-between p-8">
 							<motion.button
 								className="text-black focus:outline-none text-3xl relative left-full top-8"
@@ -88,43 +104,37 @@ const Navbar = () => {
 								✕
 							</motion.button>
 						</div>
-						<div className="space-y-16 font-semibold h-full flex flex-col items-center text-lg pb-36">
-							<RouterLink to="/" className="text-green-400 cursor-pointer" onClick={closeMobileMenu}>
+						<div className="space-y-12 font-semibold h-full flex flex-col items-center text-lg pb-36">
+							<span onClick={() => handleNavigateHome('start')} className="text-green-400 cursor-pointer">
 								START
-							</RouterLink>
-							<Link
-								to="aboutus"
-								smooth={true}
-								duration={500}
-								className="text-white cursor-pointer"
-								onClick={closeMobileMenu}>
+							</span>
+							<span
+								onClick={() => handleNavigateHome('aboutus')}
+								className="text-white cursor-pointer">
 								O NAS
-							</Link>
-							<Link
-								to="realizations"
-								smooth={true}
-								duration={500}
-								className="text-white cursor-pointer"
-								onClick={closeMobileMenu}>
+							</span>
+							<span
+								onClick={() => handleNavigateHome('realizations')}
+								className="text-white cursor-pointer">
 								REALIZACJE
-							</Link>
-							<Link
-								to="offers"
-								smooth={true}
-								duration={500}
-								className="text-white cursor-pointer"
-								onClick={closeMobileMenu}>
+							</span>
+							<span
+								onClick={() => handleNavigateHome('offers')}
+								className="text-white cursor-pointer">
 								OFERTA
-							</Link>
-							<Link
-								to="contact"
-								smooth={true}
-								duration={500}
-								className="text-white cursor-pointer"
-								onClick={closeMobileMenu}>
+							</span>
+							<span
+								onClick={() => handleNavigateHome('contact')}
+								className="text-white cursor-pointer">
 								KONTAKT
-							</Link>
+							</span>
 							<div className="flex flex-col items-center justify-between space-y-4">
+							<RouterLink
+								to="/joboffers"
+								className=" cursor-pointer mb-8 text-green-300"
+								onClick={closeMobileMenu}>
+								OFERTY PRACY
+							</RouterLink>
 								<span className="text-lg font-semibold text-white flex items-center">
 									<IoIosMail className="mr-2 text-green-400 text-2xl" />
 									dachypieta@gmail.com

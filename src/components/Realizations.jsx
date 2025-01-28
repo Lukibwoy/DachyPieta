@@ -4,6 +4,8 @@ import image20 from './images/image20.jpeg'
 import image9 from './images/image9.jpg'
 import image10 from './images/image10.jpg'
 import image11 from './images/image11.jpg'
+import image23 from './images/image23.jpeg'
+import image24 from './images/image24.jpeg'
 import image12 from './images/image12.jpg'
 import image13 from './images/image13.jpg'
 import image33 from './images/image33.jpeg'
@@ -16,8 +18,10 @@ const realizationsData = [
 	{ image: image20, type: 'Blachodachówka', model: 'RUUKI FRIGGE', area: '290m2' },
 	{ image: image9, type: 'Blachodachówka', model: 'PRUSZYŃSKI SZAFIR', area: '230m2' },
 	{ image: image10, type: 'Blachodachówka', model: 'RUUKI MONTERREY GRAND', area: '190m2' },
+	{ image: image23, type: 'Blachodachówka', model: 'RUUKI FRIGGE', area: '240m2' },
 	{ image: image12, type: 'Blachodachówka', model: 'RUUKI CLASSIC DESIGN M', area: '216m2' },
 	{ image: image13, type: 'Dachówka betonowa', model: 'BRAAS TEVIVA', area: '150m2' },
+	{ image: image24, type: 'Blachodachówka', model: 'BRATEX SCANDINAVIA', area: '170m2' },
 	{ image: image33, type: 'Blacha obróbkowa', model: '-', area: '-' },
 	{ image: imagesplit, type: 'Blacha obróbkowa', model: '-', area: '-' },
 	{ image: wiezba1, type: '-', model: '-', area: '-' },
