@@ -8,12 +8,14 @@ import Offers from './Offers'
 import Process from './Process'
 import Contrahents from './Contrahents'
 import ContactForm from './ContactForm'
+import Cookie from './Cookie'
 
 const Home = () => {
 	return (
 		<div path="/">
 			<Header />
 			<AboutUs />
+			<Cookie />
 			<Data />
 			<Separator />
 			<Realizations />
