@@ -19,7 +19,7 @@ const Navbar = () => {
 	}
 
 	// Navigate to home and scroll
-	const handleNavigateHome = (target) => {
+	const handleNavigateHome = target => {
 		navigate('/') // Redirect to home page
 		setTimeout(() => {
 			// Scroll to target section
@@ -36,17 +36,17 @@ const Navbar = () => {
 				<Logo />
 
 				<div className="flex flex-col items-center justify-between space-y-2">
-					<span className="text-lg font-semibold text-black flex items-center">
+					<span className="text-sm lg:text-lg font-semibold text-black flex items-center">
 						<IoIosMail className="mr-2 text-green-400 text-2xl" />
 						dachypieta@gmail.com
 					</span>
-					<span className="text-lg font-semibold text-black flex items-center">
+					<span className="text-sm lg:text-lg font-semibold text-black flex items-center">
 						<FaPhone className="mr-2 text-green-400" />
 						+48 661 647 437
 					</span>
 				</div>
 
-				<div className="md:space-x-5 lg:space-x-14 xxl:space-x-40 text-2xl mr-20 font-semibold">
+				<div className="md:space-x-4 lg:space-x-8 xl:space-x-16 xxl:space-x-40 text-lg xxl:text-2xl md:mr-2 lg:mr-8 xxl:mr-20 font-semibold">
 					<span onClick={() => handleNavigateHome('start')} className="nav-link text-green-400 cursor-pointer">
 						Start
 					</span>
@@ -59,7 +59,7 @@ const Navbar = () => {
 					<span onClick={() => handleNavigateHome('offers')} className="nav-link text-black cursor-pointer">
 						Oferta
 					</span>
-				
+
 					<span onClick={() => handleNavigateHome('contact')} className="nav-link text-black cursor-pointer">
 						Kontakt
 					</span>
@@ -108,33 +108,22 @@ const Navbar = () => {
 							<span onClick={() => handleNavigateHome('start')} className="text-green-400 cursor-pointer">
 								START
 							</span>
-							<span
-								onClick={() => handleNavigateHome('aboutus')}
-								className="text-white cursor-pointer">
+							<span onClick={() => handleNavigateHome('aboutus')} className="text-white cursor-pointer">
 								O NAS
 							</span>
-							<span
-								onClick={() => handleNavigateHome('realizations')}
-								className="text-white cursor-pointer">
+							<span onClick={() => handleNavigateHome('realizations')} className="text-white cursor-pointer">
 								REALIZACJE
 							</span>
-							<span
-								onClick={() => handleNavigateHome('offers')}
-								className="text-white cursor-pointer">
+							<span onClick={() => handleNavigateHome('offers')} className="text-white cursor-pointer">
 								OFERTA
 							</span>
-							<span
-								onClick={() => handleNavigateHome('contact')}
-								className="text-white cursor-pointer">
+							<span onClick={() => handleNavigateHome('contact')} className="text-white cursor-pointer">
 								KONTAKT
 							</span>
 							<div className="flex flex-col items-center justify-between space-y-4">
-							<RouterLink
-								to="/joboffers"
-								className=" cursor-pointer mb-8 text-green-300"
-								onClick={closeMobileMenu}>
-								OFERTY PRACY
-							</RouterLink>
+								<RouterLink to="/joboffers" className=" cursor-pointer mb-8 text-green-300" onClick={closeMobileMenu}>
+									OFERTY PRACY
+								</RouterLink>
 								<span className="text-lg font-semibold text-white flex items-center">
 									<IoIosMail className="mr-2 text-green-400 text-2xl" />
 									dachypieta@gmail.com
