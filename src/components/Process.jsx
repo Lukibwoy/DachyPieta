@@ -14,30 +14,30 @@ export default function Process() {
 				<div className="flex flex-col items-center text-center">
 					<FaSearch className="text-green-400 text-4xl mb-4 transform transition-transform duration-200 hover:scale-125" />
 					<h4 className="text-lg md:text-xl font-semibold">Wybór</h4>
-					<p className="text-sm md:text-lg text-gray-600 mt-4">Wybór rodzaju oraz modelu pokrycia dachowego przez klienta.</p>
+					<p className="text-sm md:text-lg text-black mt-4">Wybór rodzaju oraz modelu pokrycia dachowego przez klienta.</p>
 				</div>
 				<div className="flex flex-col items-center text-center">
 					<FaListOl className="text-green-400 text-4xl mb-4 transform transition-transform duration-200 hover:scale-125" />
 					<h4 className="text-lg md:text-xl font-semibold">Wycena</h4>
-					<p className="text-sm md:text-lg text-gray-600 mt-4">Przedstawienie darmowej wyceny kompleksowej usługi.</p>
+					<p className="text-sm md:text-lg text-black mt-4">Przedstawienie darmowej wyceny kompleksowej usługi.</p>
 				</div>
 
 				<div className="flex flex-col items-center text-center">
 					<BsFillCalendar2DateFill className="text-green-400 text-4xl mb-4 transform transition-transform duration-200 hover:scale-125" />
 					<h4 className="text-lg md:text-xl font-semibold">Planowanie</h4>
-					<p className="text-sm md:text-lg text-gray-600 mt-4">Ustalenie terminu oraz podpisanie klarownej umowy.</p>
+					<p className="text-sm md:text-lg text-black mt-4">Ustalenie terminu oraz podpisanie klarownej umowy.</p>
 				</div>
 
 				<div className="flex flex-col items-center text-center">
 					<FaHammer className="text-green-400 text-4xl mb-4 transform transition-transform duration-200 hover:scale-125" />
 					<h4 className="text-lg md:text-xl font-semibold">Realizacja</h4>
-					<p className="text-sm md:text-lg text-gray-600 mt-4">Dostarczenie materiału oraz wykonanie montażu.</p>
+					<p className="text-sm md:text-lg text-black mt-4">Dostarczenie materiału oraz wykonanie montażu.</p>
 				</div>
 
 				<div className="flex flex-col items-center text-center">
 					<FaCheckCircle className="text-green-400 text-4xl mb-4 transform transition-transform duration-200 hover:scale-125" />
 					<h4 className="text-lg md:text-xl font-semibold">Zakończenie</h4>
-					<p className="text-sm md:text-lg text-gray-600 mt-4">Przedstawienie klientowi finalnej realizacji.</p>
+					<p className="text-sm md:text-lg text-black mt-4">Przedstawienie klientowi finalnej realizacji.</p>
 				</div>
 			</div>
 		</div>

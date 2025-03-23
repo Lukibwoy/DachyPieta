@@ -30,23 +30,36 @@ const Navbar = () => {
 	}
 
 	return (
-		<nav id="/" className="md:p-0 p-2 relative z-10">
+		<nav id="/" className="md:p-0 p-2 relative z-20 bg-white">
 			{/* Desktop Navigation */}
 			<div className="hidden md:flex items-center justify-between">
 				<Logo />
 
 				<div className="flex flex-col items-center justify-between space-y-2">
-					<span className="text-sm lg:text-lg font-semibold text-black flex items-center">
+					{/* Animacja dla maila */}
+					<motion.span
+						className="text-sm lg:text-lg font-semibold text-black flex items-center"
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+						transition={{ delay: 0.5, duration: 0.5 }}
+					>
 						<IoIosMail className="mr-2 text-green-400 text-2xl" />
 						dachypieta@gmail.com
-					</span>
-					<span className="text-sm lg:text-lg font-semibold text-black flex items-center">
+					</motion.span>
+
+					{/* Animacja dla telefonu */}
+					<motion.span
+						className="text-sm lg:text-lg font-semibold text-black flex items-center"
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+						transition={{ delay: 0.5, duration: 0.5 }}
+					>
 						<FaPhone className="mr-2 text-green-400" />
 						+48 661 647 437
-					</span>
+					</motion.span>
 				</div>
 
-				<div className="md:space-x-4 lg:space-x-8 xl:space-x-16 xxl:space-x-40 text-lg xxl:text-2xl md:mr-2 lg:mr-8 xxl:mr-20 font-semibold">
+				<div className="md:space-x-4 lg:space-x-14 xl:space-x-16 xxl:space-x-40 text-lg xxl:text-2xl md:mr-2 lg:mr-8 xxl:mr-20 font-semibold">
 					<span onClick={() => handleNavigateHome('start')} className="nav-link text-green-400 cursor-pointer">
 						Start
 					</span>
@@ -93,7 +106,7 @@ const Navbar = () => {
 						exit={{ opacity: 0, x: '-100%' }}
 						transition={{ duration: 0.3, ease: 'easeInOut' }}
 						className="md:hidden ml-5 absolute top-0 right-0 bg-gray-900 bg-opacity-50 h-screen backdrop-blur-md w-full z-10">
-						<div className="flex items-center justify-between p-8">
+						<div className="flex items-center justify-between p-8 sticky">
 							<motion.button
 								className="text-black focus:outline-none text-3xl relative left-full top-8"
 								onClick={closeMobileMenu}
@@ -124,14 +137,27 @@ const Navbar = () => {
 								<RouterLink to="/joboffers" className=" cursor-pointer mb-8 text-green-300" onClick={closeMobileMenu}>
 									OFERTY PRACY
 								</RouterLink>
-								<span className="text-lg font-semibold text-white flex items-center">
+								{/* Animacja dla maila */}
+								<motion.span
+									className="text-lg font-semibold text-white flex items-center"
+									initial={{ opacity: 0 }}
+									animate={{ opacity: 1 }}
+									transition={{ delay: 0.7, duration: 0.5 }}
+								>
 									<IoIosMail className="mr-2 text-green-400 text-2xl" />
 									dachypieta@gmail.com
-								</span>
-								<span className="text-lg font-semibold text-white flex items-center">
+								</motion.span>
+
+								{/* Animacja dla telefonu */}
+								<motion.span
+									className="text-lg font-semibold text-white flex items-center"
+									initial={{ opacity: 0 }}
+									animate={{ opacity: 1 }}
+									transition={{ delay: 0.5, duration: 0.5 }}
+								>
 									<FaPhone className="mr-2 text-green-400" />
 									+48 661 647 437
-								</span>
+								</motion.span>
 							</div>
 						</div>
 					</motion.div>

@@ -55,7 +55,7 @@ export default function ContactForm() {
 		}
 	}
 	return (
-		<div className="relative w-screen h-auto flex flex-col items-start justify-start px-4 py-2 md:px-16 mt-8 md:mt-32	 md:flex-row mb-64 md:mb-0">
+		<div className="relative w-screen h-auto flex flex-col items-start justify-start px-4 py-2 md:px-16 mt-8 md:flex-row mb-64 md:mb-0">
 			<div className="left-side w-full md:w-1/2 h-3/4">
 				<h2 className="text-2xl md:text-3xl font-bold uppercase text-center md:text-left w-full mb-4">
 					FORMULARZ KONTAKTOWY
@@ -115,11 +115,12 @@ export default function ContactForm() {
 									type="file"
 									id="file"
 									name="file"
-									className="mt-2 block w-full border hover:border-green-400 rounded-md shadow-sm p-2"
+									className="mt-2 block w-full border border-gray-400 hover:border-green-400 rounded-md shadow-sm p-2"
 									onChange={event => {
 										setFieldValue('file', event.target.files[0])
 									}}
 								/>
+
 								<ErrorMessage name="file" component="div" className="text-red-500 text-sm mt-1" />
 							</div>
 

@@ -12,13 +12,15 @@ import image33 from './images/image33.jpeg'
 import wiezba1 from './images/wiezba1.jpeg'
 import wiezba2 from './images/wiezba2.jpeg'
 import imagesplit from './images/image_split.png'
+import dron1 from './images/dron1.jpg'
 
 const realizationsData = [
+	{ image: dron1, type: 'Dachówka ceramiczna', model: 'MEYER HOLSEN PIANO', area: '380m2' },
+	{ image: image23, type: 'Blachodachówka', model: 'RUUKI FRIGGE', area: '240m2' },
 	{ image: image11, type: 'Blachodachówka', model: 'RUUKI MONTERREY GRAND', area: '250m2' },
 	{ image: image20, type: 'Blachodachówka', model: 'RUUKI FRIGGE', area: '290m2' },
 	{ image: image9, type: 'Blachodachówka', model: 'PRUSZYŃSKI SZAFIR', area: '230m2' },
 	{ image: image10, type: 'Blachodachówka', model: 'RUUKI MONTERREY GRAND', area: '190m2' },
-	{ image: image23, type: 'Blachodachówka', model: 'RUUKI FRIGGE', area: '240m2' },
 	{ image: image12, type: 'Blachodachówka', model: 'RUUKI CLASSIC DESIGN M', area: '216m2' },
 	{ image: image13, type: 'Dachówka betonowa', model: 'BRAAS TEVIVA', area: '150m2' },
 	{ image: image24, type: 'Blachodachówka', model: 'BRATEX SCANDINAVIA', area: '170m2' },
