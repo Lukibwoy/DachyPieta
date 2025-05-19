@@ -20,13 +20,12 @@ const Navbar = () => {
 
 	// Navigate to home and scroll
 	const handleNavigateHome = target => {
-		navigate('/') // Redirect to home page
+		navigate('/')
 		setTimeout(() => {
-			// Scroll to target section
 			const element = document.getElementById(target)
 			if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' })
-		}, 100) // Timeout ensures page loads before scrolling
-		closeMobileMenu() // Close mobile menu after navigation
+		}, 100)
+		closeMobileMenu()
 	}
 
 	return (
@@ -36,43 +35,40 @@ const Navbar = () => {
 				<Logo />
 
 				<div className="flex flex-col items-center justify-between space-y-2">
-					{/* Animacja dla maila */}
 					<motion.span
 						className="text-sm lg:text-lg font-semibold text-black flex items-center"
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}
-						transition={{ delay: 0.5, duration: 0.5 }}
-					>
+						transition={{ delay: 0.5, duration: 0.5 }}>
 						<IoIosMail className="mr-2 text-green-400 text-2xl" />
 						dachypieta@gmail.com
 					</motion.span>
 
-					{/* Animacja dla telefonu */}
-					<motion.span
-						className="text-sm lg:text-lg font-semibold text-black flex items-center"
-						initial={{ opacity: 0 }}
-						animate={{ opacity: 1 }}
-						transition={{ delay: 0.5, duration: 0.5 }}
-					>
-						<FaPhone className="mr-2 text-green-400" />
-						+48 661 647 437
-					</motion.span>
+					<a href="tel:+48661647437">
+						<motion.span
+							className="text-sm lg:text-lg font-semibold text-black flex items-center"
+							initial={{ opacity: 0 }}
+							animate={{ opacity: 1 }}
+							transition={{ delay: 0.5, duration: 0.5 }}>
+							<FaPhone className="mr-2 text-green-400" />
+							+48 661 647 437
+						</motion.span>
+					</a>
 				</div>
 
-				<div className="md:space-x-4 lg:space-x-14 xl:space-x-16 xxl:space-x-40 text-lg xxl:text-2xl md:mr-2 lg:mr-8 xxl:mr-20 font-semibold">
-					<span onClick={() => handleNavigateHome('start')} className="nav-link text-green-400 cursor-pointer">
-						Start
-					</span>
+				<div className="md:space-x-4 xl:space-x-16 xxl:space-x-36 text-lg xxl:text-2xl md:mr-2 lg:mr-8 xxl:mr-20 font-semibold">
 					<span onClick={() => handleNavigateHome('aboutus')} className="nav-link text-black cursor-pointer">
 						O nas
 					</span>
+					<RouterLink to="/liftoffers" className="nav-link text-green-400 cursor-pointer">
+						Usługi dźwigowe
+					</RouterLink>
 					<span onClick={() => handleNavigateHome('realizations')} className="nav-link text-black cursor-pointer">
 						Realizacje
 					</span>
 					<span onClick={() => handleNavigateHome('offers')} className="nav-link text-black cursor-pointer">
 						Oferta
 					</span>
-
 					<span onClick={() => handleNavigateHome('contact')} className="nav-link text-black cursor-pointer">
 						Kontakt
 					</span>
@@ -118,12 +114,12 @@ const Navbar = () => {
 							</motion.button>
 						</div>
 						<div className="space-y-12 font-semibold h-full flex flex-col items-center text-lg pb-36">
-							<span onClick={() => handleNavigateHome('start')} className="text-green-400 cursor-pointer">
-								START
-							</span>
 							<span onClick={() => handleNavigateHome('aboutus')} className="text-white cursor-pointer">
 								O NAS
 							</span>
+							<RouterLink to="/liftoffers" className="text-green-400 cursor-pointer" onClick={closeMobileMenu}>
+								USŁUGI DŹWIGOWE
+							</RouterLink>
 							<span onClick={() => handleNavigateHome('realizations')} className="text-white cursor-pointer">
 								REALIZACJE
 							</span>
@@ -137,27 +133,24 @@ const Navbar = () => {
 								<RouterLink to="/joboffers" className=" cursor-pointer mb-8 text-green-300" onClick={closeMobileMenu}>
 									OFERTY PRACY
 								</RouterLink>
-								{/* Animacja dla maila */}
 								<motion.span
 									className="text-lg font-semibold text-white flex items-center"
 									initial={{ opacity: 0 }}
 									animate={{ opacity: 1 }}
-									transition={{ delay: 0.7, duration: 0.5 }}
-								>
+									transition={{ delay: 0.7, duration: 0.5 }}>
 									<IoIosMail className="mr-2 text-green-400 text-2xl" />
 									dachypieta@gmail.com
 								</motion.span>
-
-								{/* Animacja dla telefonu */}
-								<motion.span
-									className="text-lg font-semibold text-white flex items-center"
-									initial={{ opacity: 0 }}
-									animate={{ opacity: 1 }}
-									transition={{ delay: 0.5, duration: 0.5 }}
-								>
-									<FaPhone className="mr-2 text-green-400" />
-									+48 661 647 437
-								</motion.span>
+								<a href="tel:+48661647437">
+									<motion.span
+										className="text-lg font-semibold text-white flex items-center"
+										initial={{ opacity: 0 }}
+										animate={{ opacity: 1 }}
+										transition={{ delay: 0.5, duration: 0.5 }}>
+										<FaPhone className="mr-2 text-green-400" />
+										+48 661 647 437
+									</motion.span>
+								</a>
 							</div>
 						</div>
 					</motion.div>

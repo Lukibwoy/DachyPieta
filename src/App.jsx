@@ -5,6 +5,7 @@ import './App.css'
 import Footer from './components/Footer'
 import Home from './components/Home'
 import JobOffers from './components/JobOffers'
+import LiftOffers from './components/LiftOffers'
 import tlostrony from './components/images/tlostrony.jpg'
 
 const App = () => {
@@ -28,9 +29,10 @@ const App = () => {
 			<BrowserRouter>
 				<Navbar />
 				<div className="relative z-10">
-					<Routes>
+					<Routes>	
 						<Route path="/" element={<Home />} />
 						<Route path="/joboffers" element={<JobOffers />} />
+						<Route path="/liftoffers" element={<LiftOffers />} />
 					</Routes>
 				</div>
 				<Footer />
